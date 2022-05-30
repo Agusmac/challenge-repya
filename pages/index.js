@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react'
 // import styles from '../styles/Home.module.css'
-
+import List from './List'
 
 const dummyIDs = [1, 2, 3, 64, 128, 256]
 
@@ -72,20 +72,21 @@ export default function Home() {
       alert("Select an option!")
     }
     else {
-    var today = new Date();
-    var date = today.getDate() + '/' + (today.getMonth() + 1) + '/' + today.getFullYear()
+      var today = new Date();
+      var date = today.getDate() + '/' + (today.getMonth() + 1) + '/' + today.getFullYear()
 
-    const newAction = {
-      clientId: currentUser,
-      email: emailInput[c][v],
-      document: docInput[c][v],
-      action: actionInput[c][v],
-      observations: obsInput[c][v],
-      date
+      const newAction = {
+        clientId: currentUser,
+        email: emailInput[c][v],
+        document: docInput[c][v],
+        action: actionInput[c][v],
+        observations: obsInput[c][v],
+        date
+      }
+      setDummyData((prev) => [...prev, newAction])
+      emptier()
     }
-    setDummyData((prev) => [...prev, newAction])
-    emptier()
-  }}
+  }
 
 
 
@@ -118,8 +119,7 @@ export default function Home() {
           <div className='flex'>
             <input required style={{ marginLeft: 0 }} type='email' id='email' placeholder="Email" ref={emailInput} />
             <input required type='text' id='document' placeholder="Document" ref={docInput} />
-            {/* <input type='text' id='action' placeholder="Action" ref={actionInput} /> */}
-            <select  ref={actionInput}>
+            <select ref={actionInput}>
               <option value="1" hidden>Choose an action</option>
               <option value="compra">Compra</option>
               <option value="consulta">Consulta</option>
@@ -130,20 +130,7 @@ export default function Home() {
           <div className='addAction' onClick={addAction}><div>Add</div></div>
         </div>
       )}
-      {/* list */}
-      <div className='centered width-80 test'>
-        {dummyData?.map((item, index) => {
-          return (
-            <div key={index} className='flex-apart w-full'>
-              <p>{item.clientId}</p>
-              <p>{item.document}</p>
-              <p>{item.email}</p>
-              <p>{item.action}</p>
-              <p>{item.observations}</p>
-              <p>{item.date}</p>
-            </div>)
-        })}
-      </div>
+      <List dummyData={dummyData}></List>
     </>
   )
 }
