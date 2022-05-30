@@ -5,13 +5,13 @@ const List = ({ dummyData }) => {
         <div className='centered width-80 test'>
             {dummyData?.map((item, index) => {
                 return (
-                    <div key={index} className='flex-apart w-full'>
+                    <div key={index} className='grid-apart w-full'>
                         <div> <p>{item.clientId}</p></div>
                         <div> <p>{item.document}</p></div>
                         <div> <p>{item.email}</p></div>
                         <div> <p>{item.action}</p></div>
                         <div> <p>{item.observations}</p></div>
-                        <div> <p>{item.date}</p></div>
+                         <p>{item.date}</p>
                     </div>)
             })}
         </div>

@@ -39,10 +39,11 @@ a {
   width: 100%;
 }
 
-.flex-apart {
-  display: flex;
-  justify-content: space-between;
+.grid-apart {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
 }
+
 .flex {
   display: flex;
 
@@ -64,7 +65,9 @@ a {
   margin: 0 20px;
   height: 20px;
 }
-
+.grid-apart > *:last-child {
+  text-align: end;
+} 
 .addButton {
   height: 20px;
   width: 20px;
