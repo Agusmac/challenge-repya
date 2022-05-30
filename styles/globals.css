@@ -14,3 +14,79 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.test {
+  border: 2px solid grey;
+  border-radius: 10px;
+  min-height: 300px;
+}
+
+.centered {
+  margin: 20px auto;
+
+}
+
+.texcen {
+  text-align: center;
+}
+
+.width-80 {
+  width: 80%;
+  padding: 20px;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.flex-apart {
+  display: flex;
+  justify-content: space-between;
+}
+.flex {
+  display: flex;
+
+}
+.flex2 {
+  display: flex;
+  align-items: center;
+}
+/* esto es un horror */
+.flex input {
+  margin: 0 20px;
+  height: 20px;
+}
+.fix input{
+  margin: 0 20px;
+  height: 20px;
+}
+.flex select{
+  margin: 0 20px;
+  height: 20px;
+}
+
+.addButton {
+  height: 20px;
+  width: 20px;
+  background-color: darkgray;
+  color: white;
+  border-radius: 2px;
+  display: grid;
+  place-content: center;
+  cursor: pointer;
+}
+.addButton div{
+  position: relative;
+  top: -2px;
+}
+.addAction{
+  min-height: 30px;
+  width: 100px;
+  border-radius: 15px;
+  background-color: darkgrey;
+  text-align: center;
+  color: white;
+  align-items: center; /* Vertical center alignment */
+  justify-content: center;
+  display: flex;
+}
