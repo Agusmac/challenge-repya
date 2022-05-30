@@ -60,7 +60,6 @@ export default function Home() {
   }
 
 
-
   // checks if id exists (in the id list) and opens the form div
   function clientCheck() {
     const clientId = parseInt(clientIdInput[c][v])
