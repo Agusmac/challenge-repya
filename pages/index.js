@@ -82,8 +82,10 @@ export default function Home() {
   return (
     <>
       <h1 className='texcen'>Challenge Agus</h1>
+      <p className='texcen'>User ids: 1, 2, 3, 64, 128, 256</p>
       <div className='centered width-80 flex2 fix'>
         <h4>Add new interaction</h4>
+       
         {/* i could probably turn this into a select mapping over the client ids */}
         <input type='text' id='idCheck' placeholder="Client ID" ref={clientIdInput} />
         <div className='addButton' onClick={clientCheck}><div>+</div></div>
