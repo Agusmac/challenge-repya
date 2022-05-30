@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react'
 
-import { alerter, success } from '../alerts'
+import { alerter, success } from '../helpers/alerts'
 import List from '../components/List'
 import { dummyIDs, dummyDatax } from '../dummy'
 
