@@ -1,6 +1,10 @@
 import React, { useState, useRef } from 'react'
+
+import { alerter, success } from '../alerts'
 import List from '../components/List'
-import { dummyIDs,dummyDatax } from '../dummy'
+import { dummyIDs, dummyDatax } from '../dummy'
+
+
 
 export default function Home() {
 
@@ -21,6 +25,9 @@ export default function Home() {
   const v = 'value'
 
 
+
+
+
   // well the name says it all
   function emptier() {
     clientIdInput[c][v] = '';
@@ -35,14 +42,14 @@ export default function Home() {
 
   // pushes new action to the array (sets state again)
   function addAction() {
-    if (actionInput[c][v] === '1' ) {
-      alert("Select an option!")
-    } else if( emailInput[c][v] === '' || docInput[c][v]=== '' || actionInput[c][v]=== '' || obsInput[c][v]=== ''){
-      alert("Complete all the fields!")
+    if (actionInput[c][v] === '1') {
+      alerter('Select an option!')
+    } else if (emailInput[c][v] === '' || docInput[c][v] === '' || actionInput[c][v] === '' || obsInput[c][v] === '') {
+      alerter('Complete ALL the fields!')
     }
-   
+
     else {
-      
+
       var today = new Date();
       var date = today.getDate() + '/' + (today.getMonth() + 1) + '/' + today.getFullYear()
 
@@ -56,6 +63,7 @@ export default function Home() {
       }
       setDummyData((prev) => [...prev, newAction])
       emptier()
+      success()
     }
   }
 
@@ -68,7 +76,7 @@ export default function Home() {
     if (clientExists) setOpen(true);
     else {
       setOpen(false)
-      alert("Client Does not exist")
+      alerter("Client does not exist")
     }
   }
 
