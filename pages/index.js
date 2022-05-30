@@ -2,10 +2,7 @@ import React, { useState, useRef } from 'react'
 import List from '../components/List'
 import { dummyIDs,dummyDatax } from '../dummy'
 
-
-
 export default function Home() {
-
 
   const [open, setOpen] = useState(false)
   const [currentUser, setCurrentUser] = useState('')
