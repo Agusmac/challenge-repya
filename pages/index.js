@@ -26,8 +26,6 @@ export default function Home() {
 
 
 
-
-
   // well the name says it all
   function emptier() {
     clientIdInput[c][v] = '';
@@ -86,6 +84,7 @@ export default function Home() {
       <h1 className='texcen'>Challenge Agus</h1>
       <div className='centered width-80 flex2 fix'>
         <h4>Add new interaction</h4>
+        {/* i could probably turn this into a select mapping over the client ids */}
         <input type='text' id='idCheck' placeholder="Client ID" ref={clientIdInput} />
         <div className='addButton' onClick={clientCheck}><div>+</div></div>
       </div>
