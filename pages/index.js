@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react'
 // import styles from '../styles/Home.module.css'
-import List from './List'
+import List from '../components/List'
 
 const dummyIDs = [1, 2, 3, 64, 128, 256]
 
@@ -68,10 +68,14 @@ export default function Home() {
 
   // pushes new action to the array (sets state again)
   function addAction() {
-    if (actionInput[c][v] === '1') {
+    if (actionInput[c][v] === '1' ) {
       alert("Select an option!")
+    } else if( emailInput[c][v] === '' || docInput[c][v]=== '' || actionInput[c][v]=== '' || obsInput[c][v]=== ''){
+      alert("Complete all the fields!")
     }
+   
     else {
+      
       var today = new Date();
       var date = today.getDate() + '/' + (today.getMonth() + 1) + '/' + today.getFullYear()
 
